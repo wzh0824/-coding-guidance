@@ -3,20 +3,20 @@
  * @author a
  */
 public class Test04 {
-    public static boolean find(int[][] arr, int target) {
+    public static boolean find(int[][] matrix, int target) {
         //特殊情况判断
-        if (arr == null || arr.length == 0 || arr[0].length == 0) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return false;
         }
-        int rows = arr.length;
-        int cols = arr[1].length;
+        int rows = matrix.length;
+        int cols = matrix[0].length;
         int row = 0;
         int col = cols - 1;
         //>=0时候才会把0判断算上
         while (row < rows && col >= 0) {
-            if (arr[row][col] > target) {
+            if (matrix[row][col] > target) {
                 col--;
-            } else if (arr[row][col] < target) {
+            } else if (matrix[row][col] < target) {
                 row++;
             } else {
                 return true;
@@ -26,10 +26,10 @@ public class Test04 {
     }
 
     public static void main(String[] args) {
-        int [][]arr = {
+        int [][]matrix = {
                 {1, 2, 3, 6},
                 {5, 7, 9, 10},
                 {6, 8, 11, 15}};
-        System.out.println(find(arr, 11));
+        System.out.println(find(matrix, -5));
     }
 }

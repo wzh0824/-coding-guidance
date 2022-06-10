@@ -37,7 +37,7 @@ public class Test05 {
     }
 
     public static void main(String[] args) {
-        String s="hello world";
+        String s=" ";
         String s1 = replaceBlank(s);
         System.out.println(s1);
     }
